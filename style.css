@@ -263,12 +263,12 @@ h1::after {
     width: 100%;
     justify-content: center;
     justify-items: center;
-    margin: 0 auto;
+    margin-top: 25px;
   }
 
   .btns button {
     width: 100%;
-    max-width: 140px; /* keeps them same width */
+    max-width: 140px;
     text-align: center;
     font-size: 13px;
     padding: 10px 0;
@@ -284,9 +284,8 @@ h1::after {
   }
 }
 
-/* 🔴 Very Tiny Screens 320px */
+/* Very Tiny Screens 320px */
 @media (max-width: 320px) {
-  /* Buttons stack only here */
   .btns {
     grid-template-columns: 1fr;
   }
