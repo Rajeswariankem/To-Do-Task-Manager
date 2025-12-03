@@ -22,9 +22,12 @@ This app helps users manage daily tasks with an intuitive UI, smooth animations,
 
 🧠 How It Works
 
-- All tasks are stored in Local Storage, so your list stays safe even after refreshing or closing the browser.
-- Completed tasks get a line-through and faded appearance for clarity.
-- Undo restores the task to its normal state.
+- Tasks can be added through the input field and instantly appear in the task list.
+- When a task is completed, it gets a strike-through effect and its appearance fades slightly to indicate completion.
+- Completed tasks can be undone at any time, restoring them to their normal state.
+- Tasks can be deleted permanently using the delete option.
+- All tasks and progress are saved automatically using LocalStorage, ensuring your data remains even after refreshing or closing the browser.
+- A Reset option is provided to clear all tasks and statistics whenever needed.
 - Statistics update automatically, including:
    - Total tasks added
    - Completed tasks
