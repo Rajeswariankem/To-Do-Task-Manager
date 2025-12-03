@@ -82,6 +82,11 @@ function addTask() {
 
 com.addEventListener("click", function () {
   const items = list.querySelectorAll(".task-item");
+  if (items.length === 0) {
+    alert("The list is empty — please add some tasks..!");
+    return;
+  }
+  found = false;
   items.forEach(function (item) {
     const checkbox = item.querySelector(".task-checkbox");
     if (checkbox && checkbox.checked) {
@@ -89,20 +94,26 @@ com.addEventListener("click", function () {
       checkbox.checked = false;
       completedcount++;
       completed.textContent = completedcount;
-      saveTasks();
-      saveStats();
+      found = true;
       // checkbox.disabled = true;
-    } else {
-      alert("Select a task to complete!");
     }
   });
+  if (!found) {
+    alert("Select a task to delete!");
+  } else {
+    saveTasks();
+    saveStats();
+  }
 });
 
 const undo = document.getElementById("undo-btn");
 undo.addEventListener("click", function () {
   const items = list.querySelectorAll(".task-item");
+  if (items.length === 0) {
+    alert("The list is empty — please add some tasks..!");
+    return;
+  }
   let undone = false;
-
   items.forEach(function (item) {
     const checkbox = item.querySelector(".task-checkbox");
     if (checkbox && checkbox.checked && item.classList.contains("completed")) {
@@ -127,18 +138,26 @@ undo.addEventListener("click", function () {
 
 del.addEventListener("click", function () {
   const items = list.querySelectorAll(".task-item");
+  if (items.length === 0) {
+    alert("The list is empty — please add some tasks..!");
+    return;
+  }
+  found = false;
   items.forEach(function (item) {
     const checkbox = item.querySelector(".task-checkbox");
     if (checkbox && checkbox.checked) {
       item.remove();
       deletedcount++;
       deleted.textContent = deletedcount;
-      saveTasks();
-      saveStats();
-    } else {
-      alert("Select a task to delete!");
+      found = true;
     }
   });
+  if (!found) {
+    alert("Select a task to delete!");
+  } else {
+    saveTasks();
+    saveStats();
+  }
 });
 
 const reset = document.getElementById("reset-btn");
